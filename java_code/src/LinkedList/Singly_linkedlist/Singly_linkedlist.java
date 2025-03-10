@@ -1,9 +1,9 @@
 package LinkedList.Singly_linkedlist;
 
 public class Singly_linkedlist {
-    private class Node{
-        private int val;
-        private Node next;
+    public class Node{
+        public int val;
+        public Node next;
 
         public Node(int val){
             this.val = val;
@@ -15,11 +15,11 @@ public class Singly_linkedlist {
         }
     }
 
-    private Node head;
-    private Node tail;
-    private int size;
+    public Node head;
+    public Node tail;
+    public int size;
 
-    public void display(){
+    public void display(Node head){
         Node temp = head;
 
         while(temp != null){
@@ -157,12 +157,12 @@ public class Singly_linkedlist {
 
 //        sl.insertAtIndex(25, 6);
 
-        sl.display();
+        sl.display(sl.head);
 
 //        sl.deleteFirst();
 //        sl.deleteLast();
         sl.deleteAtIndex(0);
-        sl.display();
+        sl.display(sl.head);
     }
 
 }
