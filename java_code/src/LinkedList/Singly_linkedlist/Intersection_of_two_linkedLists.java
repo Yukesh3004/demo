@@ -24,60 +24,76 @@ public class Intersection_of_two_linkedLists{ //leetcode no:160
 //        return null;
 
         //improvised
+//        Singly_linkedlist.Node t1 = headA;
+//        Singly_linkedlist.Node t2 = headB;
+//        int n1 = 0;
+//        int n2 = 0;
+//
+//        //find the length of headA
+//        while(t1 != null){
+//            t1 = t1.next;
+//            n1+=1;
+//        }
+//
+//        //find the length of headB
+//        while(t2 != null){
+//            t2 = t2.next;
+//            n2+=1;
+//        }
+//
+//        if(n1 == n2){
+//            t1 = headA;
+//            t2 = headB;
+//            while(t1 != null && t2 != null){
+//                if(t1 == t2) return t1;
+//                t1 = t1.next;
+//                t2 = t2.next;
+//            }
+//        }else if(n1 > n2){
+//            t1 = headA;
+//            t2 = headB;
+//            int d = n1-n2;
+//            while(d != 0){
+//                t1 = t1.next;
+//                d -= 1;
+//            }
+//            while(t1 != null && t2 != null){
+//                if(t1 == t2) return t1;
+//                t1 = t1.next;
+//                t2 = t2.next;
+//            }
+//        }else if(n2 > n1){
+//            t1 = headA;
+//            t2 = headB;
+//            int d = n2-n1;
+//            while(d != 0){
+//                t2 = t2.next;
+//                d -= 1;
+//            }
+//            while(t1 != null && t2 != null){
+//                if(t1 == t2) return t1;
+//                t1 = t1.next;
+//                t2 = t2.next;
+//            }
+//        }
+//
+//        return null;
+
+        //another improvised one
         Singly_linkedlist.Node t1 = headA;
         Singly_linkedlist.Node t2 = headB;
-        int n1 = 0;
-        int n2 = 0;
 
-        //find the length of headA
-        while(t1 != null){
+        while(t1 != t2){
             t1 = t1.next;
-            n1+=1;
-        }
-
-        //find the length of headB
-        while(t2 != null){
             t2 = t2.next;
-            n2+=1;
+
+            if(t1 == t2 ) return t1;
+
+            if(t1 == null) t1 = headB;
+            if(t2 == null) t2 = headA;
         }
 
-        if(n1 == n2){
-            t1 = headA;
-            t2 = headB;
-            while(t1 != null && t2 != null){
-                if(t1 == t2) return t1;
-                t1 = t1.next;
-                t2 = t2.next;
-            }
-        }else if(n1 > n2){
-            t1 = headA;
-            t2 = headB;
-            int d = n1-n2;
-            while(d != 0){
-                t1 = t1.next;
-                d -= 1;
-            }
-            while(t1 != null && t2 != null){
-                if(t1 == t2) return t1;
-                t1 = t1.next;
-                t2 = t2.next;
-            }
-        }else if(n2 > n1){
-            t1 = headA;
-            t2 = headB;
-            int d = n2-n1;
-            while(d != 0){
-                t2 = t2.next;
-                d -= 1;
-            }
-            while(t1 != null && t2 != null){
-                if(t1 == t2) return t1;
-                t1 = t1.next;
-                t2 = t2.next;
-            }
-        }
-
-        return null;
+        return t1;
     }
 
 }

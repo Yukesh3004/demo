@@ -3,9 +3,9 @@ package LinkedList.Singly_linkedlist;
 public class Merge_two_sorted_lists { //leetcode no:21
 
     public static Singly_linkedlist.Node mergeTwoLists(Singly_linkedlist.Node node1, Singly_linkedlist.Node node2) {
-        if (node1 == null && node2 != null) return node2;
+        if (node1 == null && node2 == null) return node1;
         else if (node2 == null && node1 != null) return node1;
-        else if (node1 == null && node2 == null) return node1;
+        else if (node1 == null && node2 != null) return node1;
 
         Singly_linkedlist.Node temp1 = node1;
         Singly_linkedlist.Node temp2 = node2;
