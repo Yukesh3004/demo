@@ -30,6 +30,21 @@ public class Singly_linkedlist {
         System.out.println("size = " + size);
     }
 
+    public void displayCycleList(Node head){
+        Node temp = head;
+
+        while(temp != null){
+            System.out.print(temp.val + " -> ");
+            temp = temp.next;
+            if(temp.next == head){
+                System.out.print(temp.val + " -> ");
+                System.out.println(head.val);
+                System.out.println("size = " + size);
+                return;
+            }
+        }
+    }
+
     public void insertAtFirst(int val){
         Node node = new Node(val);
         node.next = head;
@@ -66,6 +81,7 @@ public class Singly_linkedlist {
                 Node node = new Node(val);
                 node.next = null;
                 temp.next = node;
+                tail = node;
                 size++;
                 return;
             }
@@ -144,6 +160,11 @@ public class Singly_linkedlist {
         return temp;
     }
 
+    public void makeCycleList(int val, Node head){
+        insertAtLastWithoutTail(val);
+        tail.next = head;
+    }
+
 
     public static void main(String[] args){
         Singly_linkedlist sl = new Singly_linkedlist();
@@ -153,16 +174,18 @@ public class Singly_linkedlist {
         sl.insertAtFirst(40);
 
 //        sl.insertAtLastWithTail(0);
-//        sl.insertAtLastWithoutTail(-1);
-
+        sl.insertAtLastWithoutTail(-1);
 //        sl.insertAtIndex(25, 6);
-
         sl.display(sl.head);
+//        System.out.println(sl.tail.val);
 
 //        sl.deleteFirst();
 //        sl.deleteLast();
-        sl.deleteAtIndex(0);
-        sl.display(sl.head);
+//        sl.deleteAtIndex(0);
+//        sl.display(sl.head);
+
+        sl.makeCycleList(50, sl.head);
+        sl.displayCycleList(sl.head);
     }
 
 }
