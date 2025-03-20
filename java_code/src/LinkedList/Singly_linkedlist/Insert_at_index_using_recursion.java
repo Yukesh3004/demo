@@ -3,6 +3,7 @@ package LinkedList.Singly_linkedlist;
 public class Insert_at_index_using_recursion {
 
     public static Singly_linkedlist.Node insertUsingRecursion(int index, int val, Singly_linkedlist.Node head){
+        //brute force
         if(index == 0){
             Singly_linkedlist sl = new Singly_linkedlist();
             Singly_linkedlist.Node node = sl.new Node(val,head);

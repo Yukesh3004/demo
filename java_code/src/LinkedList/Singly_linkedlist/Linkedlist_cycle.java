@@ -62,7 +62,7 @@ public class Linkedlist_cycle { //leetcode no:141
         sl.insertAtFirst(20);
         sl.insertAtFirst(30);
         sl.insertAtFirst(40);
-        sl.makeCycleList(50, sl.head);
+//        sl.makeCycleList(50, sl.head);
 //        sl.insertAtFirst(100);
 //        sl.insertAtFirst(110);
 //        sl.displayCycleList(sl.head);
