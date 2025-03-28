@@ -1,20 +1,21 @@
 package LinkedList.Singly_linkedlist;
 
-public class Node{
-    Node next;
-    String title;
-    String author;
-    String genre;
-
-    public Node(String title, String author, String genre){
-        this.title = title;
-        this.author = author;
-        this.genre = genre;
-        this.next = null;
-    }
-}
-
 public class BookStore_maintaining { // interview question
+
+    public class Node{
+        Node next;
+        String title;
+        String author;
+        String genre;
+
+        public Node(String title, String author, String genre){
+            this.title = title;
+            this.author = author;
+            this.genre = genre;
+            this.next = null;
+        }
+    }
+
     Node head = null;
 
     public void addBooks(String title, String author, String genre){
