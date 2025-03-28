@@ -29,6 +29,7 @@ public class BookStore_maintaining { // interview question
     }
 
     public static Node partitionBooksByGenre(Node head, String genre){
+        Node temp = head;
 
     }
 
